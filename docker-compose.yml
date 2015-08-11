@@ -9,7 +9,7 @@ web:
   environment:
     API_SERVICE_HOST: api
     API_SERVICE_PORT: 8080
-api: 
+api:
   image: stevesloka/k8s-api
   ports:
     - "8080:8080"
@@ -17,6 +17,5 @@ api:
     - db
   environment:
     spring.datasource.url: jdbc:mysql://db/demo_db
-    #hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
 db:
   image: stevesloka/k8s-mysql

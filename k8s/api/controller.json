@@ -25,6 +25,12 @@
                 "name": "api-port",
                 "containerPort": 8080
               }
+            ],
+            "env": [
+              {
+                "name": "spring_datasource_url",
+                "value": "jdbc:mysql://${DB_SERVICE_HOST}:${DB_SERVICE_PORT}/demo_db"
+              }
             ]
           }
         ]
