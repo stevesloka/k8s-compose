@@ -1,0 +1,34 @@
+{
+  "kind": "ReplicationController",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "db",
+    "labels": {
+      "name": "db"
+    }
+  },
+  "spec": {
+    "replicas": 1,
+    "template": {
+      "metadata": {
+        "labels": {
+          "name": "db"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "db",
+            "image": "stevesloka/k8s-mysql",
+            "ports": [
+              {
+                "name": "mysql-server",
+                "containerPort": 3306
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

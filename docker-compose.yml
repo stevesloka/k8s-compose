@@ -1,3 +1,14 @@
+web:
+  image: stevesloka/k8s-webapp
+  volumes:
+    - /vagrant/devopsdays/webapp/dist:/usr/share/nginx/html
+  links:
+    - api
+  ports:
+    - "80:80"
+  environment:
+    API_SERVICE_HOST: api
+    API_SERVICE_PORT: 8080
 api: 
   image: stevesloka/k8s-api
   ports:
