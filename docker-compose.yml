@@ -1,5 +1,5 @@
 web:
-  image: stevesloka/k8s-webapp
+  image: stevesloka/k8s-webapp:1.0
   volumes:
     - /vagrant/devopsdays/webapp/dist:/usr/share/nginx/html
   links:

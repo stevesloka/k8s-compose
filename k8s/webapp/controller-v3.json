@@ -2,7 +2,7 @@
   "kind": "ReplicationController",
   "apiVersion": "v1",
   "metadata": {
-    "name": "web-v1.0",
+    "name": "web-v3.0",
     "labels": {
       "name": "web"
     }
@@ -11,21 +11,21 @@
     "replicas": 4,
     "selector": {
       "name": "web",
-      "version": "1.0"
+      "version": "3.0"
     },
     "template": {
       "metadata": {
         "labels": {
           "name": "web",
           "uses": "web",
-          "version": "1.0"
+          "version": "3.0"
         }
       },
       "spec": {
         "containers": [
           {
             "name": "web",
-            "image": "stevesloka/k8s-webapp:1.0",
+            "image": "stevesloka/k8s-webapp:3.0",
             "ports": [
               {
                 "name": "web-port",
